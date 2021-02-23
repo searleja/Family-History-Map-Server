@@ -6,6 +6,13 @@ public class LoginResult {
   private String personID;
   private String message;
 
+  /**
+   * Constructor for LoginResult. Contains data about the current User.
+   * @param authToken
+   * @param username
+   * @param personID
+   * @param message
+   */
   public LoginResult(String authToken, String username, String personID, String message) {
     this.authToken=authToken;
     this.username=username;

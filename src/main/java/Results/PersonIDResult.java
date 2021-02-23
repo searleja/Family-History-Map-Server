@@ -11,6 +11,18 @@ public class PersonIDResult {
   private String spouseID;
   private String message;
 
+  /**
+   * Constructor for PersonIDResult. Contains all data about the resulting Person.
+   * @param associatedUsername
+   * @param personID
+   * @param firstName
+   * @param lastName
+   * @param gender
+   * @param fatherID
+   * @param motherID
+   * @param spouseID
+   * @param message
+   */
   public PersonIDResult(String associatedUsername, String personID, String firstName, String lastName, String gender,
                         String fatherID, String motherID, String spouseID, String message) {
     this.associatedUsername=associatedUsername;

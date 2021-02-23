@@ -6,6 +6,11 @@ public class PersonResult {
   private Person[] data;
   private String message;
 
+  /**
+   * Constructor for PersonResult. Contains data about all ancestors of the User.
+   * @param data
+   * @param message
+   */
   public PersonResult(Person[] data, String message) {
     this.data=data;
     this.message=message;

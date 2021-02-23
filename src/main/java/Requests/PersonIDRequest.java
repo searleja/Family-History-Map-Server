@@ -4,13 +4,14 @@ public class PersonIDRequest {
   private String personID;
   private String authToken;
 
+  /**
+   * Constructor for PersonIDRequest. Stores specified ID and user's authToken.
+   * @param personID
+   * @param authToken
+   */
   public PersonIDRequest(String personID, String authToken) {
     this.personID=personID;
     this.authToken=authToken;
-  }
-
-  public boolean isValid() {
-    return false;
   }
 
   public String getPersonID() {

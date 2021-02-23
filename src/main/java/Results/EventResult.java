@@ -6,6 +6,10 @@ public class EventResult {
   private Event[] data;
   private String message;
 
+  /**
+   * Constructor for EventResult. Stores data about all events for all family members of the user.
+   * @param data
+   */
   public EventResult(Event[] data) {
     this.data=data;
   }

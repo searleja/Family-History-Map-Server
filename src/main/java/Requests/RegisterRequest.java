@@ -8,6 +8,15 @@ public class RegisterRequest {
   private String lastName;
   private String gender;
 
+  /**
+   * Constructor for RegisterRequest. Stores information about the User to be registered.
+   * @param username
+   * @param password
+   * @param email
+   * @param firstName
+   * @param lastName
+   * @param gender
+   */
   public RegisterRequest(String username, String password, String email, String firstName, String lastName, String gender) {
     this.username=username;
     this.password=password;
@@ -15,10 +24,6 @@ public class RegisterRequest {
     this.firstName=firstName;
     this.lastName=lastName;
     this.gender=gender;
-  }
-
-  public boolean isValid() {
-    return false;
   }
 
   public String getUsername() {

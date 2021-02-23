@@ -6,6 +6,13 @@ public class RegisterResult {
   private String personID;
   private String message;
 
+  /**
+   * Constructor for RegisterResult. Contains data about the Person who has been registered.
+   * @param authToken
+   * @param username
+   * @param personID
+   * @param message
+   */
   public RegisterResult(String authToken, String username, String personID, String message) {
     this.authToken=authToken;
     this.username=username;

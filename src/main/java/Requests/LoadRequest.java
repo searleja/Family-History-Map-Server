@@ -9,14 +9,16 @@ public class LoadRequest {
   private Person[] persons;
   private Event[] events;
 
+  /**
+   * Constructor for LoadRequest. Stores posted user, person, and event data.
+   * @param users
+   * @param persons
+   * @param events
+   */
   public LoadRequest(User[] users, Person[] persons, Event[] events) {
     this.users=users;
     this.persons=persons;
     this.events=events;
-  }
-
-  public boolean isValid() {
-    return false;
   }
 
   public User[] getUsers() {

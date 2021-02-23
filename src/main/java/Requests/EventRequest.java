@@ -3,6 +3,10 @@ package Requests;
 public class EventRequest {
   private String authToken;
 
+  /**
+   * Constructor for EventRequest. Stores the user's authToken.
+   * @param authToken
+   */
   public EventRequest(String authToken) {
     this.authToken=authToken;
   }

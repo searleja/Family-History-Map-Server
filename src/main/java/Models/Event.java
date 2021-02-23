@@ -11,6 +11,18 @@ public class Event {
   private String eventType;
   private int year;
 
+  /**
+   * Constructor for the Event class. Stores data about the person, type, location, and year of the event.
+   * @param eventID
+   * @param associatedUsername
+   * @param personID
+   * @param latitude
+   * @param longitude
+   * @param country
+   * @param city
+   * @param eventType
+   * @param year
+   */
   public Event(String eventID, String associatedUsername, String personID, float latitude, float longitude,
                String country, String city, String eventType, int year) {
     this.eventID=eventID;

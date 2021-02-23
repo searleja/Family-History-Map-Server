@@ -12,6 +12,19 @@ public class EventIDResult {
   private int year;
   private String message;
 
+  /**
+   * Constructor for EventIDResult. Contains all data about the resulting event.
+   * @param associatedUsername
+   * @param eventID
+   * @param personID
+   * @param latitude
+   * @param longitude
+   * @param country
+   * @param city
+   * @param eventType
+   * @param year
+   * @param message
+   */
   public EventIDResult(String associatedUsername, String eventID, String personID, long latitude, long longitude,
                        String country, String city, String eventType, int year, String message) {
     this.associatedUsername=associatedUsername;

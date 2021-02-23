@@ -10,7 +10,19 @@ public class Person {
   private String MotherID;
   private String SpouseID;
 
-  public Person(String personID, String associatedUsername, String firstName, String lastName, String gender, String fatherID, String motherID, String spouseID) {
+  /**
+   * Constructor for the Person class. Stores data about the person and immediate family.
+   * @param personID
+   * @param associatedUsername
+   * @param firstName
+   * @param lastName
+   * @param gender
+   * @param fatherID
+   * @param motherID
+   * @param spouseID
+   */
+  public Person(String personID, String associatedUsername, String firstName, String lastName, String gender,
+                String fatherID, String motherID, String spouseID) {
     this.personID=personID;
     this.associatedUsername=associatedUsername;
     this.firstName=firstName;

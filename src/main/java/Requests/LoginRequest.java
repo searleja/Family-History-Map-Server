@@ -4,13 +4,14 @@ public class LoginRequest {
   private String username;
   private String password;
 
+  /**
+   * Constructor for LoginRequest. Stores username and password.
+   * @param username
+   * @param password
+   */
   public LoginRequest(String username, String password) {
     this.username=username;
     this.password=password;
-  }
-
-  public boolean isValid() {
-    return false;
   }
 
   public String getUsername() {
