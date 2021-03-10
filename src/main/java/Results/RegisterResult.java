@@ -1,31 +1,47 @@
 package Results;
 
 public class RegisterResult {
-  private String authToken;
+  private String authtoken;
   private String username;
   private String personID;
   private String message;
 
+
+  private boolean success;
+
   /**
    * Constructor for RegisterResult. Contains data about the Person who has been registered.
-   * @param authToken
+   * @param authtoken
    * @param username
    * @param personID
-   * @param message
    */
-  public RegisterResult(String authToken, String username, String personID, String message) {
-    this.authToken=authToken;
+  public RegisterResult(String authtoken, String username, String personID) {
+    this.authtoken=authtoken;
     this.username=username;
     this.personID=personID;
-    this.message=message;
+    this.success=true;
+    this.message=null;
   }
 
-  public String getAuthToken() {
-    return authToken;
+  public RegisterResult(String failMessage) {
+    this.message = failMessage;
+    this.success= false;
   }
 
-  public void setAuthToken(String authToken) {
-    this.authToken=authToken;
+  public boolean isSuccessful() {
+    return success;
+  }
+
+  public void setSuccess(boolean success) {
+    this.success=success;
+  }
+
+  public String getAuthtoken() {
+    return authtoken;
+  }
+
+  public void setAuthtoken(String authtoken) {
+    this.authtoken=authtoken;
   }
 
   public String getUsername() {

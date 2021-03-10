@@ -4,10 +4,12 @@ import Models.Event;
 import Models.Person;
 import Models.User;
 
+import java.util.ArrayList;
+
 public class LoadRequest {
-  private User[] users;
-  private Person[] persons;
-  private Event[] events;
+  private ArrayList<User> users;
+  private ArrayList<Person> persons;
+  private ArrayList<Event> events;
 
   /**
    * Constructor for LoadRequest. Stores posted user, person, and event data.
@@ -15,33 +17,33 @@ public class LoadRequest {
    * @param persons
    * @param events
    */
-  public LoadRequest(User[] users, Person[] persons, Event[] events) {
+  public LoadRequest(ArrayList<User> users, ArrayList<Person> persons, ArrayList<Event> events) {
     this.users=users;
     this.persons=persons;
     this.events=events;
   }
 
-  public User[] getUsers() {
+  public ArrayList<User> getUsers() {
     return users;
   }
 
-  public void setUsers(User[] users) {
+  public void setUsers(ArrayList<User> users) {
     this.users=users;
   }
 
-  public Person[] getPersons() {
+  public ArrayList<Person> getPersons() {
     return persons;
   }
 
-  public void setPersons(Person[] persons) {
+  public void setPersons(ArrayList<Person> persons) {
     this.persons=persons;
   }
 
-  public Event[] getEvents() {
+  public ArrayList<Event> getEvents() {
     return events;
   }
 
-  public void setEvents(Event[] events) {
+  public void setEvents(ArrayList<Event> events) {
     this.events=events;
   }
 }

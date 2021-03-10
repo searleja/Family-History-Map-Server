@@ -10,6 +10,7 @@ public class PersonIDResult {
   private String motherID;
   private String spouseID;
   private String message;
+  private boolean success;
 
   /**
    * Constructor for PersonIDResult. Contains all data about the resulting Person.
@@ -34,6 +35,16 @@ public class PersonIDResult {
     this.motherID=motherID;
     this.spouseID=spouseID;
     this.message=message;
+    success = true;
+  }
+
+  public PersonIDResult(String message) {
+    this.message=message;
+    success = false;
+  }
+
+  public boolean isSuccessful() {
+    return success;
   }
 
   public String getAssociatedUsername() {

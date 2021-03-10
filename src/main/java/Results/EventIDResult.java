@@ -4,13 +4,14 @@ public class EventIDResult {
   private String associatedUsername;
   private String eventID;
   private String personID;
-  private long latitude;
-  private long longitude;
+  private float latitude;
+  private float longitude;
   private String country;
   private String city;
   private String eventType;
   private int year;
   private String message;
+  private boolean success;
 
   /**
    * Constructor for EventIDResult. Contains all data about the resulting event.
@@ -23,10 +24,9 @@ public class EventIDResult {
    * @param city
    * @param eventType
    * @param year
-   * @param message
    */
-  public EventIDResult(String associatedUsername, String eventID, String personID, long latitude, long longitude,
-                       String country, String city, String eventType, int year, String message) {
+  public EventIDResult(String associatedUsername, String eventID, String personID, float latitude, float longitude,
+                       String country, String city, String eventType, int year) {
     this.associatedUsername=associatedUsername;
     this.eventID=eventID;
     this.personID=personID;
@@ -36,7 +36,12 @@ public class EventIDResult {
     this.city=city;
     this.eventType=eventType;
     this.year=year;
+    success = true;
+  }
+
+  public EventIDResult(String message) {
     this.message=message;
+    success = false;
   }
 
   public String getAssociatedUsername() {
@@ -63,19 +68,19 @@ public class EventIDResult {
     this.personID=personID;
   }
 
-  public long getLatitude() {
+  public float getLatitude() {
     return latitude;
   }
 
-  public void setLatitude(long latitude) {
+  public void setLatitude(float latitude) {
     this.latitude=latitude;
   }
 
-  public long getLongitude() {
+  public float getLongitude() {
     return longitude;
   }
 
-  public void setLongitude(long longitude) {
+  public void setLongitude(float longitude) {
     this.longitude=longitude;
   }
 
@@ -117,5 +122,9 @@ public class EventIDResult {
 
   public void setMessage(String message) {
     this.message=message;
+  }
+
+  public boolean isSuccessful() {
+    return success;
   }
 }

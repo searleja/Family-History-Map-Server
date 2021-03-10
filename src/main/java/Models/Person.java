@@ -6,9 +6,9 @@ public class Person {
   private String firstName;
   private String lastName;
   private String gender;
-  private String FatherID;
-  private String MotherID;
-  private String SpouseID;
+  private String fatherID;
+  private String motherID;
+  private String spouseID;
 
   /**
    * Constructor for the Person class. Stores data about the person and immediate family.
@@ -28,9 +28,9 @@ public class Person {
     this.firstName=firstName;
     this.lastName=lastName;
     this.gender=gender;
-    FatherID=fatherID;
-    MotherID=motherID;
-    SpouseID=spouseID;
+    this.fatherID=fatherID;
+    this.motherID=motherID;
+    this.spouseID=spouseID;
   }
 
   public String getPersonID() {
@@ -74,26 +74,45 @@ public class Person {
   }
 
   public String getFatherID() {
-    return FatherID;
+    return fatherID;
   }
 
   public void setFatherID(String fatherID) {
-    FatherID=fatherID;
+    this.fatherID=fatherID;
   }
 
   public String getMotherID() {
-    return MotherID;
+    return motherID;
   }
 
   public void setMotherID(String motherID) {
-    MotherID=motherID;
+    this.motherID=motherID;
   }
 
   public String getSpouseID() {
-    return SpouseID;
+    return spouseID;
   }
 
   public void setSpouseID(String spouseID) {
-    SpouseID=spouseID;
+    this.spouseID=spouseID;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null)
+      return false;
+    if (o instanceof Person) {
+      Person oPerson = (Person) o;
+      return oPerson.getPersonID().equals(getPersonID()) &&
+              oPerson.getUsername().equals(getUsername()) &&
+              oPerson.getFirstName().equals(getFirstName()) &&
+              oPerson.getLastName().equals(getLastName()) &&
+              oPerson.getGender().equals(getGender()) &&
+              oPerson.getFatherID().equals(getFatherID()) &&
+              oPerson.getMotherID().equals(getMotherID()) &&
+              oPerson.getSpouseID().equals(getSpouseID());
+    } else {
+      return false;
+    }
   }
 }

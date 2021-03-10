@@ -1,31 +1,46 @@
 package Results;
 
 public class LoginResult {
-  private String authToken;
+  private String authtoken;
   private String username;
   private String personID;
   private String message;
+  private boolean success;
+
+
 
   /**
    * Constructor for LoginResult. Contains data about the current User.
-   * @param authToken
+   * @param authtoken
    * @param username
    * @param personID
-   * @param message
    */
-  public LoginResult(String authToken, String username, String personID, String message) {
-    this.authToken=authToken;
+  public LoginResult(String authtoken, String username, String personID) {
+    this.authtoken=authtoken;
     this.username=username;
     this.personID=personID;
-    this.message=message;
+    success=true;
   }
 
-  public String getAuthToken() {
-    return authToken;
+  public LoginResult(String failMessage) {
+    this.message = failMessage;
+     success = false;
   }
 
-  public void setAuthToken(String authToken) {
-    this.authToken=authToken;
+  public boolean isSuccessful() {
+    return success;
+  }
+
+  public void setSuccessful(boolean success) {
+    this.success=success;
+  }
+
+  public String getAuthtoken() {
+    return authtoken;
+  }
+
+  public void setAuthtoken(String authtoken) {
+    this.authtoken=authtoken;
   }
 
   public String getUsername() {

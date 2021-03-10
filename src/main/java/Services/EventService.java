@@ -1,7 +1,10 @@
 package Services;
 
+import DataAccess.*;
 import Requests.EventRequest;
 import Results.EventResult;
+
+import java.sql.Connection;
 
 public class EventService {
 
@@ -10,7 +13,22 @@ public class EventService {
    * @param request
    * @return EventResult
    */
-  public EventResult getEvents(EventRequest request) {
-    return null;
+  public EventResult getEvents(EventRequest request) throws DataAccessException {
+    Database db = new Database();
+    Connection conn = db.openConnection();
+    EventResult result;
+    AuthTokenDao authDao = new AuthTokenDao(conn);
+    EventDao eventDao = new EventDao(conn);
+
+    if (authDao.find(request.getAuthToken()) == null) {
+      result = new EventResult("Error: Invalid auth token");
+      db.closeConnection(false);
+      return result;
+    }
+
+    result = new EventResult(eventDao.findEvents(authDao.findUsername(request.getAuthToken())));
+
+    db.closeConnection(true);
+    return result;
   }
 }

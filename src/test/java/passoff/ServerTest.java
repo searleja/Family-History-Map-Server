@@ -607,6 +607,7 @@ public class ServerTest {
             //If person1 is null then a Person Object was not created for the user and inserted into the database
             assertNotNull(userPerson, "User's Person not included in passoffresult");
             //Here we are getting the Person information for sheila's father
+            System.out.println(userPerson.getFatherID() + " " + userPerson.getMotherID());
             Person userFather = personsResult.getPerson(userPerson.getFatherID());
             //Here we are getting the Person information for sheila's mother
             Person userMother = personsResult.getPerson(userPerson.getMotherID());
@@ -1090,6 +1091,7 @@ public class ServerTest {
         assert pageNotFoundHTMLStr != null;
         pageNotFoundHTMLStr = pageNotFoundHTMLStr.replaceAll("\r", ""); //ignore new lines
         pageNotFoundHTMLStr = pageNotFoundHTMLStr.replaceAll("\n", ""); //ignore new lines
+        System.out.println("before try");
 
         try {
             //We are calling the File Handler api with a url of "junkExtension"
@@ -1230,6 +1232,7 @@ public class ServerTest {
      */
     private void checkParentsMarriage(EventsResult eventsResult, PersonsResult personsResult, Person person, String relationship, int generationsLeft) {
         Person personFather = personsResult.getPerson(person.getFatherID());
+        System.out.println(personsResult.getPerson(person.getFatherID()));
         assertNotNull(personFather, relationship + "'s Father's Person not included in passoffresult");
         Event fatherBirth = eventsResult.getEvent(personFather.getPersonID(), BIRTH_EVENT);
         assertNotNull(fatherBirth, relationship + "'s Father's birth Event not included in passoffresult");
