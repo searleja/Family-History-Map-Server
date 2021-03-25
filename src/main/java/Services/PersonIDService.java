@@ -37,6 +37,7 @@ public class PersonIDService {
       db.closeConnection(false);
       return result;
     }
+    String test = authDao.findUsername(id.getAuthToken());
     if (!myPerson.getUsername().equals(authDao.findUsername(id.getAuthToken()))) {
       result = new PersonIDResult("Error: Requested person does not belong to this user");
       db.closeConnection(false);

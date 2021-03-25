@@ -6,7 +6,6 @@ import Requests.RegisterRequest;
 import Results.LoadResult;
 import Results.RegisterResult;
 import Services.LoadService;
-import Services.RegisterService;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;

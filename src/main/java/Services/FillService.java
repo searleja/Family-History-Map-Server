@@ -54,6 +54,7 @@ public class FillService {
    */
   public FillResult fill(FillRequest request) throws DataAccessException {
     generations = request.getNumGenerations();
+    if (generations <= 0) generations = 4;
     importData();
     FillResult result;
     Database db = new Database();

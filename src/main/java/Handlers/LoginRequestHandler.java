@@ -6,7 +6,6 @@ import Requests.RegisterRequest;
 import Results.LoginResult;
 import Results.RegisterResult;
 import Services.LoginService;
-import Services.RegisterService;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -18,6 +17,7 @@ public class LoginRequestHandler implements HttpHandler {
 
   @Override
   public void handle(HttpExchange exchange) throws IOException {
+    System.out.println("working");
     try {
       if (exchange.getRequestMethod().equals("POST")) {
 
@@ -28,6 +28,7 @@ public class LoginRequestHandler implements HttpHandler {
 
         if (result.isSuccessful()) {
           exchange.sendResponseHeaders(HttpURLConnection.HTTP_OK, 0);
+          System.out.println("ok");
         }
         else {
           exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0);
@@ -36,6 +37,7 @@ public class LoginRequestHandler implements HttpHandler {
         OutputStream os = exchange.getResponseBody();
         String returnOutput = g.toJson(result);
         writeString(returnOutput, os);
+        System.out.println(returnOutput);
       }
       else {
         exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0);

@@ -1,7 +1,6 @@
 package Handlers;
 
 import DataAccess.DataAccessException;
-import Models.Event;
 import Requests.EventIDRequest;
 import Results.EventIDResult;
 import Services.EventIDService;

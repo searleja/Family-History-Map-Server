@@ -21,7 +21,6 @@ public class EventIDService {
     AuthTokenDao authDao = new AuthTokenDao(conn);
     EventDao eventDao = new EventDao(conn);
 
-
     if (authDao.find(request.getAuthToken()) == null) {
       result = new EventIDResult("Error: Invalid auth token");
       db.closeConnection(false);

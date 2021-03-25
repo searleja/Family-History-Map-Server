@@ -25,7 +25,7 @@ public class RegisterService {
   public RegisterResult register(RegisterRequest reg) throws DataAccessException {
     Database db = new Database();
     Connection conn = db.openConnection();
-    RegisterResult result = null;
+    RegisterResult result;
     UserDao userDao = new UserDao(conn);
     User myUser;
 

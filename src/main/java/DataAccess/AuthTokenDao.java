@@ -84,7 +84,7 @@ public class AuthTokenDao {
   /**
    * deletes data from the database
    */
-  public void delete() {
+  public void clear() {
     String sql="DELETE FROM AuthorizationToken";
     try (PreparedStatement statement=conn.prepareStatement(sql)) {
       statement.execute();

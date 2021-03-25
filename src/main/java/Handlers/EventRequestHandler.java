@@ -6,7 +6,6 @@ import Requests.PersonRequest;
 import Results.EventResult;
 import Results.PersonResult;
 import Services.EventService;
-import Services.PersonService;
 import com.google.gson.Gson;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;

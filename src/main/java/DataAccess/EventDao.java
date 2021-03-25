@@ -96,6 +96,7 @@ public class EventDao {
                 rs.getInt("Year"));
         events.add(currentEvent);
       }
+      if (events.size() == 0) return null;
       return events;
     } catch (SQLException e) {
       e.printStackTrace();
